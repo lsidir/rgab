@@ -11,7 +11,7 @@ do
 done
 
 cat > $COPY_SQL <<EOF
-COPY 7184  RECORDS INTO AIRPORTS from '`pwd`/airports.dat' USING DELIMITERS ',', '\n', '"' NULL AS '\\N'  LOCKED;
-COPY 6162  RECORDS INTO AIRLINES from '`pwd`/airlines.dat' USING DELIMITERS ',', '\n', '"' NULL AS '\\N'  LOCKED;
-COPY 65612 RECORDS INTO ROUTES   from '`pwd`/routes.dat'   USING DELIMITERS ',', '\n', '"' NULL AS '\\N'  LOCKED;
+COPY 7184  RECORDS INTO AIRPORTS from '`pwd`/airports.dat' USING DELIMITERS ',', '\n', '"' NULL AS '\\\N'  LOCKED;
+COPY 6162  RECORDS INTO AIRLINES from '`pwd`/airlines.dat' USING DELIMITERS ',', '\n', '"' NULL AS '\\\N'  LOCKED;
+COPY 65612 RECORDS INTO ROUTES   from '`pwd`/routes.dat'   USING DELIMITERS ',', '\n', '"' NULL AS '\\\N'  LOCKED;
 EOF
