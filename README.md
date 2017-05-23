@@ -1,4 +1,4 @@
-This is a small Relational Graph Analytics Benchmark (sRGAB) to test the cababilitites
+This is a small Relational Graph Analytics Benchmark (sRGAB) to test the capabilities
 and the correctness of a relational database that supports graph analytics.
 
 There are three relational tables (airports, airlines, and routes) and x queries.
@@ -14,5 +14,5 @@ openflights_schema.sql
 openflights_copy.sql
 openflights_alter.sql
 
-And to drop the databse run
+And to drop the database run
 openflights_drop.sql
