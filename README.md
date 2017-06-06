@@ -1,4 +1,4 @@
-#About
+# About
 
 This is a small Relational Graph Analytics Benchmark (sRGAB) to test the capabilities
 and the correctness of a relational database that supports graph analytics.
@@ -8,7 +8,7 @@ There are three relational tables (airports, airlines, and routes) and x queries
 The data are taken from the [OpenFlights](https://openflights.org/data.html)
 Airport, Airline and Route Databases which are made available under the Open Database License.
 
-#Install
+# Install
 
 1. Run `generate-sql.sh` to create the `openflights_copy.sql` script file with
 the correct local path to copy the data from. This should be run in the same
@@ -26,5 +26,5 @@ openflights_alter.sql
 openflights_drop.sql
 ```
 
-#Sanity check queries
+# Sanity check queries
 
