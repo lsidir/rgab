@@ -128,7 +128,7 @@ SELECT COUNT(*) FROM airlines WHERE airlines.AirlineID IN (SELECT AirlineID_tgt 
 --1 tuple (2.3s)
 
 --Qs6
--- Dense Rank the AirlinesID from table airlines to create unique and consequtive ids for airlines and join them with the source and target of the Airlines graph to upodate the AirlineID_src and AirlineID_tgt to the newly assigned ids from dense rank.
+-- Dense Rank the AirlinesID from table airlines to create unique and consecutive ids for airlines and join them with the source and target of the Airlines graph to update the AirlineID_src and AirlineID_tgt to the newly assigned ids from dense rank.
 SELECT src_vertices.id AS src_id,
        tgt_vertices.id AS tgt_id
 FROM airlines_graph_view,
