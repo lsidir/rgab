@@ -17,7 +17,7 @@ CREATE TABLE AIRPORTS (
 
 CREATE TABLE AIRLINES (
 		AirlineID INTEGER       NOT NULL, -- Unique OpenFlights identifier for this airline.
-		Name      CHAR(120)     NOT NULL, -- Name of the aairline.
+		Name      CHAR(120)     NOT NULL, -- Name of the airline.
 		Alias     CHAR(120),              -- Alias of the airline. For example, All Nippon Airways is commonly known as "ANA".
 		IATA      CHAR(2),                -- 2-letter IATA code, if available.
 		ICAO      CHAR(3),                -- 3-letter ICAO code, if available.

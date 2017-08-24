@@ -18,6 +18,17 @@ SELECT COUNT(*) FROM routes;
 --+-------+
 --1 tuple (3.249ms)
 
+-- Qs2a
+-- dense rank the routes graph
+SELECT src_vertices.id AS src_id,
+       tgt_vertices.id AS tgt_id
+FROM routes,
+     (SELECT airports.AirportID, DENSE_RANK() OVER (ORDER BY airports.AirportID) AS id FROM airports) AS src_vertices,
+     (SELECT airports.AirportID, DENSE_RANK() OVER (ORDER BY airports.AirportID) AS id FROM airports) AS tgt_vertices
+WHERE
+     routes.SourceAirportID = src_vertices.AirportID AND routes.DestinationAirportID = tgt_vertices.AirportID;
+
+
 -- Qs3
 -- check the number of airlines
 SELECT COUNT(*) FROM airlines;
@@ -32,7 +43,7 @@ SELECT COUNT(*) FROM airlines;
 -- two airlines are connected, if there is a flight from airline 1 that lands in the country of the base of airline 2. This is the (directed) Airlines Graph
 SELECT COUNT(*) FROM
 (
-    SELECT DISTINCT airlines1.AirlineID as AirlineID_src, airlines2.AirlineID as AirlineID_tgt
+    SELECT DISTINCT airlines1.AirlineID AS AirlineID_src, airlines2.AirlineID AS AirlineID_tgt
     FROM
         airlines AS airlines1,
         airlines AS airlines2,
@@ -55,7 +66,7 @@ SELECT COUNT(*) FROM
 -- same query with GROUP BY instead of DISTINCT
 SELECT COUNT(*) FROM
 (
-    SELECT airlines1.AirlineID as AirlineID_src, airlines2.AirlineID as AirlineID_tgt
+    SELECT airlines1.AirlineID AS AirlineID_src, airlines2.AirlineID AS AirlineID_tgt
     FROM
         airlines AS airlines1,
         airlines AS airlines2,
@@ -136,4 +147,5 @@ FROM airlines_graph_view,
      (SELECT airlines.AirlineID, (DENSE_RANK() OVER (ORDER BY airlines.AirlineID)) AS id FROM airlines) AS tgt_vertices
 WHERE airlines_graph_view.AirlineID_src = src_vertices.AirlineID AND
       airlines_graph_view.AirlineID_tgt = tgt_vertices.AirlineID;
+-- 467359 tuples (2.3s)
 

@@ -22,5 +22,25 @@ openflights_alter.sql
 openflights_drop.sql
 ```
 
+# Schema
+
+| AIRPORTS |   | ROUTES |     | AIRLINES |
+|:---      |---|  ---   |:---| ---      |
+|**_AirportID_** (pk)|   |Airline   |   |**_AirlineID_** (pk)|
+|Name      |   |*AirlineID* (fk)    |   |Name     |
+|City      |   |SourceAirport       |   |Alias    |
+|Country   |   |*SourceAirportID* (fk)|   |IATA     |
+|IATA      |   |DestinationAirport  |   |ICAO     |
+|ICAO      |   |*DestinationAirportID* (fk)|   |Callsign |
+|Latitude  |   |Codeshare           |   |Country  |
+|Longitude |   |Stops               |   |Active   |
+|Altitude  |   |Equipment           |   |         |
+|Timezone  |
+|DST       |
+|Tz        |
+|Type      |
+|Source    |
+
+
 # Sanity check queries
 
