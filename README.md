@@ -4,7 +4,7 @@ This is a small Relational Graph Analytics Benchmark (sRGAB) to test the capabil
 
 There are three relational tables (airports, airlines, and routes), x sanity check queries, and x benchmark queries.
 
-The data are taken from the [OpenFlights](https://openflights.org/data.html) Airport, Airline and Route Databases which are made available under the Open Database License.
+The data are taken from the [OpenFlights](https://openflights.org/data.php) Airport, Airline and Route Databases which are made available under the Open Database License.
 
 # Install
 
